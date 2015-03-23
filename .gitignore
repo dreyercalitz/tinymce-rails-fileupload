@@ -20,4 +20,4 @@ tmp
 *.o
 *.a
 mkmf.log
-test/tinymce-rails-documentupload-demo/public/system
+test/tinymce-rails-fileupload-demo/public/system

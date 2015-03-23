@@ -1,10 +1,10 @@
-# Tinymce::Rails::Documentupload
+# tinymce-rails-fileupload plugin
 
-Simple plugin for TinyMCE4 that allows for uploading documents from your computer and inserting a link to the uploaded document.
+Simple plugin for TinyMCE4 that allows for uploading files from your computer and inserting a link to the uploaded document.
 
 It makes no assumption on how you store the files, it simply POSTs data to a URL and expects a JSON response (see the Setup).
 
-This plugin started as a copy of [tinymce-rails-imageupload](https://github.com/PerfectlyNormal/tinymce-rails-imageupload).
+This plugin started as a copy of [tinymce-rails-imageupload](https://github.com/PerfectlyNormal/tinymce-rails-imageupload). 
 
 ## Requirements
 
@@ -15,7 +15,7 @@ This plugin started as a copy of [tinymce-rails-imageupload](https://github.com/
 
 Add this line to your application's Gemfile:
 
-    gem 'tinymce-rails-documentupload'
+    gem 'tinymce-rails-fileupload'
 
 And then execute:
 
@@ -23,21 +23,22 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tinymce-rails-documentupload
+    $ gem install tinymce-rails-fileupload
 
 ## Setup
 
 ### Set up TinyMCE as you would normally, but in the call to `.tinymce()`, add
 
-    plugins: "uploaddocument"
-    # toolbar option must include "uploaddocument" somewhere to have the button appear
+    plugins: "uploadfile"
+    # toolbar option must include "uploadfile" somewhere to have the button appear
 
 and the rest should happen automatically.
 
 ### Set up upload URL and handler
 
-The plugin defaults to POSTing to `/tinymce_assets`. You may modify it by
-supplying the option `uploaddocument_form_url` in the call to `.tinymce()`
+The plugin defaults to POSTing to `/tinymce_assets`.
+
+You may modify it by supplying the option `uploadfile_form_url` in the call to `.tinymce()`
 
 Routing to your controller must be done manually.
 Set it up using something similar in `routes.rb`:
@@ -74,7 +75,7 @@ Example:
     end
 
 
-Inserted HTML is just `<a href="..." title="...">Document title</a>`.
+Inserted HTML is just `<a href="..." title="...">Link text</a>`.
 
 ## Contributing
 

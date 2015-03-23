@@ -16,14 +16,17 @@
 //= require turbolinks
 //= require_self
 
-$("document:ready", function() {
+$(document).ready(function() {
+  
+  // Initialise TinyMCE fields
   $("[rel=tinymce]").tinymce({
     theme: "modern",
-    toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,|,link,uploaddocument",
+    toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,|,link,uploadfile",
     pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
-    plugins: ["link","uploaddocument"],
+    plugins: ["link","uploadfile"],
     relative_urls: false,
     remove_script_host: false,
     document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
-  })
+  });
+  
 });

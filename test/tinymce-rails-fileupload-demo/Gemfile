@@ -47,6 +47,6 @@ end
 # Paperclip
 gem 'paperclip'
 
-# TinyMCE Document Upload
-gem 'tinymce-rails-documentupload', path: '../../'
+# TinyMCE File Upload
+gem 'tinymce-rails-fileupload', path: '../../'
 

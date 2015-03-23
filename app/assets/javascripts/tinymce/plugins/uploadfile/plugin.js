@@ -1,8 +1,8 @@
 (function() {
-  tinymce.PluginManager.requireLangPack('uploaddocument');
+  tinymce.PluginManager.requireLangPack('uploadfile');
 
-  tinymce.create('tinymce.plugins.UploadDocument', {
-    UploadDocument: function(ed, url) {
+  tinymce.create('tinymce.plugins.UploadFile', {
+    UploadFile: function(ed, url) {
       var form,
           iframe,
           win,
@@ -10,19 +10,19 @@
 
       function showDialog() {
         win = editor.windowManager.open({
-          title: ed.translate('Insert a document from your computer'),
-          width:  500 + parseInt(editor.getLang('uploaddocument.delta_width', 0), 10),
-          height: 180 + parseInt(editor.getLang('uploaddocument.delta_height', 0), 10),
+          title: ed.translate('Insert a file from your computer'),
+          width:  500 + parseInt(editor.getLang('uploadfile.delta_width', 0), 10),
+          height: 180 + parseInt(editor.getLang('uploadfile.delta_height', 0), 10),
           body: [
             {type: 'iframe',  url: 'javascript:void(0)'},
-            {type: 'textbox', name: 'document[file]', label: ed.translate('Choose a document'), subtype: 'file'},
-            {type: 'textbox', name: 'document[title]', label: ed.translate('Document title')},
+            {type: 'textbox', name: 'document[file]', label: ed.translate('Choose a file'), subtype: 'file'},
+            {type: 'textbox', name: 'document[title]', label: ed.translate('Title')},
             {type: 'container', classes: 'error', html: "<p style='color: #b94a48;'>&nbsp;</p>"}
           ],
           buttons: [
             {
               text: ed.translate('Insert'),
-              onclick: insertDocument,
+              onclick: insertFile,
               subtype: 'primary'
             },
             {
@@ -36,11 +36,11 @@
 
         // TinyMCE likes pointless submit handlers
         win.off('submit');
-        win.on('submit', insertDocument);
+        win.on('submit', insertFile);
 
         iframe = win.find("iframe")[0];
         form = createElement('form', {
-          action: ed.getParam("uploaddocument_form_url", "/tinymce_assets"),
+          action: ed.getParam("uploadfile_form_url", "/tinymce_assets"),
           target: iframe._id,
           method: "POST",
           enctype: 'multipart/form-data',
@@ -72,12 +72,17 @@
           if(ctrl.tagName.toLowerCase() == 'input' && ctrl.type != "hidden") {
             if(ctrl.type == "file") {
               ctrl.name = "document[file]";
-
+              
               // Hack styles
+              var padding = '0';
+              if(window.navigator.userAgent.match(/(Chrome|Safari)/))
+                padding = '7px 0';
+              
               tinymce.DOM.setStyles(ctrl, {
                 'border': 0,
                 'boxShadow': 'none',
                 'webkitBoxShadow': 'none',
+                'padding': padding
               });
             } else if(ctrl.type == "text") {
               ctrl.name = "document[title]";
@@ -88,7 +93,7 @@
         body.appendChild(form);
       }
 
-      function insertDocument() {
+      function insertFile() {
         if(getInputValue("document[file]") == "") {
           return handleError('You must choose a file');
         }
@@ -191,15 +196,15 @@
       }
 
       // Add a button that opens a window
-      editor.addButton('uploaddocument', {
-        tooltip: ed.translate('Insert a document from your computer'),
+      editor.addButton('uploadfile', {
+        tooltip: ed.translate('Insert a file from your computer'),
         icon : 'newdocument',
         onclick: showDialog
       });
 
       // Adds a menu item to the tools menu
-      editor.addMenuItem('uploaddocument', {
-        text: ed.translate('Insert a document from your computer'),
+      editor.addMenuItem('uploadfile', {
+        text: ed.translate('Insert a file from your computer'),
         icon : 'newdocument',
         context: 'insert',
         onclick: showDialog
@@ -207,5 +212,5 @@
     }
   });
 
-  tinymce.PluginManager.add('uploaddocument', tinymce.plugins.UploadDocument);
+  tinymce.PluginManager.add('uploadfile', tinymce.plugins.UploadFile);
 })();
