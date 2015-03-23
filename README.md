@@ -8,7 +8,7 @@ This plugin started as a copy of [tinymce-rails-imageupload](https://github.com/
 
 ## Demo
 
-A small app demonstrating a working setup withn Rails 4 is available [here](https://github.com/dreyercalitz/tinymce-rails-fileupload-demo).
+A small app demonstrating a working setup with Rails 4 is available [here](https://github.com/dreyercalitz/tinymce-rails-fileupload-demo).
 
 ## Requirements
 
