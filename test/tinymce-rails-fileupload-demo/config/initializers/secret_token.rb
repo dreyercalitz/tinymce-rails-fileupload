@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Dummy::Application.config.secret_key_base = '86469c58f09ff72d35a198e6d57fe5982732ac56d3717b26157804cf0f8d4d90f3c905ffb979e824841a4cd5b247e640b037cd4981e44788b04fc7b26f5fe6a1'
+TinymceRailsFileupload::Application.config.secret_key_base = '86469c58f09ff72d35a198e6d57fe5982732ac56d3717b26157804cf0f8d4d90f3c905ffb979e824841a4cd5b247e640b037cd4981e44788b04fc7b26f5fe6a1'
