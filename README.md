@@ -57,8 +57,6 @@ The JSON has to be returned with a content type of "text/html" to work.
 Example:
 
     class TinymceAssetsController < ApplicationController
-      respond_to :json
-
       def create
         document = Document.create(document_params)
 
