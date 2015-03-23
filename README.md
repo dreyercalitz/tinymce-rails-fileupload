@@ -6,6 +6,10 @@ It makes no assumption on how you store the files, it simply POSTs data to a URL
 
 This plugin started as a copy of [tinymce-rails-imageupload](https://github.com/PerfectlyNormal/tinymce-rails-imageupload). 
 
+## Demo
+
+A small app demonstrating a working setup withn Rails 4 is available [here](https://github.com/dreyercalitz/tinymce-rails-fileupload-demo).
+
 ## Requirements
 
 * Rails >= 4.0

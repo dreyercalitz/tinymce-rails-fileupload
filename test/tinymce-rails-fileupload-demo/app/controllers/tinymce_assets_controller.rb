@@ -8,8 +8,7 @@ class TinymceAssetsController < ApplicationController
       document: {
         url: document.file.url,
         title: document.title
-      },
-      target: params[:target].to_s
+      }
     }, layout: false, content_type: "text/html"
   end
   
