@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Tinymce::Rails::Fileupload::VERSION
   spec.authors       = ["Dreyer Calitz"]
   spec.email         = ["fdcalitz@gmail.com"]
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/dreyercalitz/tinymce-rails-fileupload"
   spec.summary       = %q{TinyMCE plugin for file uploads in Rails >= 4.0}
   spec.description   = %q{TinyMCE plugin for file uploads in Rails >= 4.0. Document storage is handled manually, so works with everything.}
   spec.files         = [
