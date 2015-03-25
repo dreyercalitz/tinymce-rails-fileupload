@@ -29,6 +29,8 @@ Or install it yourself as:
 
     $ gem install tinymce-rails-fileupload
 
+[![Gem Version](https://badge.fury.io/rb/tinymce-rails-fileupload.svg)](http://badge.fury.io/rb/tinymce-rails-fileupload)
+
 ## Setup
 
 ### Set up TinyMCE as you would normally, but in the call to `.tinymce()`, add
