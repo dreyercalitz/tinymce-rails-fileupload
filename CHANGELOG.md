@@ -1,3 +1,8 @@
+# 0.0.4 / 2016-03-16
+
+* Increased version to 0.0.4
+* Fixed incorrect path in tinymce-uploadfile-assets.rake
+
 # 0.0.3 / 2015-03-25
 
 * README update. Set gem home page
