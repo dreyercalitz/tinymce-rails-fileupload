@@ -8,7 +8,7 @@ Rake::Task[assets_task].enhance do
   manifest = config.assets.manifest
 
   assets = Pathname.new(File.expand_path(File.join(File.dirname(__FILE__),
-    "../../app/assets/javascripts/tinymce/plugins/uploaddocument")))
+    "../../app/assets/javascripts/tinymce/plugins/uploadfile")))
 
   TinyMCE::Rails::AssetInstaller.new(assets, target, manifest).install
 end
